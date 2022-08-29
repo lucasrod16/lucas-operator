@@ -1,0 +1,19 @@
+domain: lucas.dev
+layout:
+- go.kubebuilder.io/v4-alpha
+plugins:
+  manifests.sdk.operatorframework.io/v2: {}
+  scorecard.sdk.operatorframework.io/v2: {}
+projectName: lucas-operator
+repo: main
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: lucas.dev
+  group: lucas
+  kind: EC2Instance
+  path: main/api/v1alpha1
+  version: v1alpha1
+version: "3"

@@ -1,0 +1,33 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - lucas.lucas.dev
+  resources:
+  - ec2instances
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - lucas.lucas.dev
+  resources:
+  - ec2instances/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - lucas.lucas.dev
+  resources:
+  - ec2instances/status
+  verbs:
+  - get
+  - patch
+  - update
